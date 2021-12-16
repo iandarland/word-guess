@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "home-screen">
+        <h1>Lets Play Guess the Word : Movie Edition</h1>
+        <button class = "start-game">Start Game</button>
+    </div>
+    <div class = "game-container" style = "display:none">
+        <div>
+            <h3>Score: <span class="score"></span></h3>
+            <h3>Time: <span class = "time"></span></h3>
+        </div>
+        <div>
+            <h1>Guess The Word</h1>
+            <h2 class = "game-word"></h2>
+            <h4 class= message></h4>
+        </div>
+    </div>
+    <div class= "win-page" style = "display:none">
+        <h1>You Win</h1>
+        <p>Wins: <span class= "wins"></span></p>
+        <p>Losses <span class= "losses"></span></p>
+        <button class = "start-game">Play Again</button>
+    </div>
+    <div class= "lose-page" style = "display:none">
+        <h1>You Lose</h1>
+        <p>Wins: <span class= "wins"></span></p>
+        <p>Losses <span class= "losses"></span></p>
+        <button class = "start-game">Play Again</button>
+    </div>
+    <script src="movies.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
