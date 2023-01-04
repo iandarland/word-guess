@@ -72,14 +72,24 @@ function youWin(){
 }
 
 function youLose(){
+    var gameDispEl = document.querySelectorAll('.game')
     if(score === 0 || timeLeft === 0){
+        timeLeft = 0
         clearInterval(timeInterval)
-        gameEl.style.display = "none"
-        loseEl.style.display = "block"
+        gameDispEl.forEach(item => item.style.display='none')
+        messageEl.classList.add('wrong')
+        messageEl.textContent = `Sorry, you didnt guess the correct movie: ${firstWord}`
         yourScore.losses++
         localStorage.setItem("word-score", JSON.stringify(yourScore))
         loseEl.querySelector(".wins").textContent= yourScore.wins
         loseEl.querySelector(".losses").textContent= yourScore.losses
+        var nextScreen = setInterval(function(){
+            gameDispEl.forEach(item => item.style.display='block')
+            gameEl.style.display = "none"
+            loseEl.style.display = "block"
+            messageEl.classList.remove('wrong')
+            clearInterval(nextScreen)
+        }, 3000)
 }}
 
 function countdown() {
